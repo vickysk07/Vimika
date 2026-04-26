@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vimika Enterprises - Healthy Snacking, Happy Life</title>
+    <style>
+        :root {
+            --primary-color: #27ae60;
+            --secondary-color: #2ecc71;
+            --text-dark: #2c3e50;
+            --bg-light: #f9fbf9;
+        }
+
+        body { 
+            margin: 0; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        header { 
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); 
+            color: white; 
+            padding: 25px 20px; 
+            text-align: center; 
+            font-size: 32px; 
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            position: relative;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #f39c12, #e74c3c, #9b59b6);
+        }
+
+        .hero { 
+            padding: 100px 20px; 
+            text-align: center; 
+            background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url('https://images.unsplash.com/photo-1623055419131-680e52f30d97?auto=format&fit=crop&q=80&w=1400');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .hero h1 { 
+            font-size: 3.5rem; 
+            margin-bottom: 15px; 
+            color: #1b5e20; 
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .hero-subtitle {
+            font-size: 1.4rem;
+            margin-bottom: 30px;
+            color: #34495e;
+            font-weight: 300;
+        }
+
+        .btn {
+            padding: 18px 35px;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            margin: 10px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 50px;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(39, 174, 96, 0.4);
+        }
+
+        .btn:hover {
+            background: #219150;
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+
+        .btn-pay { 
+            background: linear-gradient(45deg, #3498db, #2980b9); 
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.4);
+        }
+        .btn-pay:hover { 
+            background: linear-gradient(45deg, #2980b9, #1f618d);
+        }
+
+        .products { 
+            padding: 80px 20px; 
+            text-align: center; 
+            background: white;
+        }
+        
+        .products h2 {
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: var(--text-dark);
+        }
+        
+        .product-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .product {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.4s ease;
+            padding: 25px;
+            position: relative;
+            border: 2px solid transparent;
+        }
+
+        .product:hover { 
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            border-color: var(--primary-color);
+        }
+
+        .product img { 
+            width: 100%; 
+            height: 220px; 
+            object-fit: cover; 
+            border-radius: 15px;
+            margin-bottom: 20px;
+        }
+
+        .product h3 { 
+            margin: 0 0 15px; 
+            color: var(--primary-color); 
+            font-size: 1.5rem;
+        }
+
+        .product p {
+            color: #7f8c8d;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+
+        .about {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, var(--bg-light), #e8f5e8);
+            text-align: center;
+        }
+
+        .about h2 {
+            font-size: 2.5rem;
+            color: var(--text-dark);
+            margin-bottom: 30px;
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.2rem;
+            line-height: 1.8;
+        }
+
+        footer { 
+            background: linear-gradient(135deg, var(--text-dark), #1a252f); 
+            color: white; 
+            text-align: center; 
+            padding: 40px 20px; 
+            margin-top: 0;
+        }
+
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto 20px;
+        }
+
+        .social-links {
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 15px;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .hero-subtitle { font-size: 1.2rem; }
+            header { font-size: 24px; }
+            .product-container { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div>Vimika Enterprises</div>
+    <div style="font-size: 16px; font-weight: normal; margin-top: 5px;">Healthy Snacking, Happy Life</div>
+</header>
+
+<section class="hero">
+    <h1>Crunch Without Guilt 😋</h1>
+    <p class="hero-subtitle">Premium banana & potato chips made with natural ingredients by Vimika Enterprises</p>
+    <br>
+    <a href="https://forms.gle/YOUR-FORM-LINK" class="btn">🛍️ Order Now</a>
+    <a href="https://rzp.io/l/YOUR-PAYMENT-LINK" class="btn btn-pay">💳 Pay Now</a>
+</section>
+
+<section class="about">
+    <h2>विमिका एंटरप्रायझेस - आमची कथा</h2>
+    <div class="about-content">
+        <p>विमिका एंटरप्रायझेस हे निरोगी स्नॅकिंगचे नाव आहे. आम्ही शुद्ध नैसर्गिक साहित्य वापरून तयार केलेले केळी आणि बटाट्याच्या चिप्स तयार करतो. प्रत्येक चिपमध्ये आहे आरोग्य, चव आणि आनंद!</p>
+        <br>
+        <p><strong>Made with ❤️ in India</strong></p>
+    </div>
+</section>
+
+<section class="products">
+    <h2>आमची उत्पादने (Our Products)</h2>
+    <div class="product-container">
+        
+        <div class="product">
+            <img src="https://images.unsplash.com/photo-1623055419131-680e52f30d97?w=400" alt="Banana Chips">
+            <h3>Classic Banana Chips</h3>
+            <p>शुद्ध खोबरेल तेलात तळलेले<br>नैसर्गिक गोड चव</p>
+        </div>
+
+        <div class="product">
+            <img src="https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?w=400" alt="Peri Peri Chips">
+            <h3>Peri Peri Banana</h3>
+            <p>चटपटीत आणि तिखट चव<br>अल्टिमेट स्नॅकिंग एक्सपीरियन्स</p>
+        </div>
+
+        <div class="product">
+            <img src="https://images.unsplash.com/photo-1566478989037-eec170784d0b?w=400" alt="Aloo Chips">
+            <h3>Classic Aloo Chips</h3>
+            <p>कुरकुरीत आणि हलके<br>परफेक्ट टी-टाईम स्नॅक</p>
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    <div class="footer-content">
+        <h3>Vimika Enterprises</h3>
+        <p>© 2026 Vimika Enterprises - Healthy Snacking, Happy Life</p>
+        <p>Quality you can taste | Health you can trust</p>
+    </div>
+    <div class="social-links">
+        <a href="#">📱 WhatsApp</a>
+        <a href="#">📧 Email</a>
+        <a href="#">📞 Contact</a>
+    </div>
+</footer>
+
+</body>
+</html>
