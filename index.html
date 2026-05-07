@@ -19,6 +19,7 @@
             font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
             background-color: #fcfcfc;
             color: #333;
+            scroll-behavior: smooth;
         }
 
         /* Navigation */
@@ -56,12 +57,13 @@
         .hero h1 { font-size: 4rem; margin-bottom: 20px; text-shadow: 2px 2px 10px rgba(0,0,0,0.5); }
         .hero p { font-size: 1.5rem; max-width: 700px; margin-bottom: 30px; }
 
-        /* Product Cards */
+        /* Section Styling */
         .section-title { text-align: center; margin: 60px 0 40px; font-size: 2.5rem; position: relative; }
         .section-title::after { content: ''; width: 80px; height: 4px; background: var(--secondary); position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); }
 
         .container { max-width: 1200px; margin: auto; padding: 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
 
+        /* Product Cards */
         .card {
             background: white;
             border-radius: 20px;
@@ -91,23 +93,30 @@
         .card-body h3 { margin: 0 0 10px; color: var(--dark); }
         .price { color: var(--secondary); font-size: 1.2rem; font-weight: bold; }
 
+        /* About Section */
+        .about-section { padding: 80px 8%; background: white; line-height: 1.8; }
+        .about-content { max-width: 900px; margin: auto; text-align: center; font-size: 1.1rem; }
+
         /* Features Section */
         .features { background: #f4f4f4; padding: 60px 8%; display: flex; justify-content: space-around; flex-wrap: wrap; text-align: center; }
-        .feat-box { flex: 1; min-width: 250px; padding: 20px; }
+        .feat-box { flex: 1; min-width: 200px; padding: 20px; }
         .feat-box i { font-size: 40px; color: var(--secondary); margin-bottom: 15px; }
 
         /* Buttons */
-        .btn { padding: 15px 40px; border-radius: 50px; text-decoration: none; font-weight: bold; transition: 0.3s; display: inline-block; }
-        .btn-primary { background: var(--primary); color: white; }
+        .btn { padding: 15px 35px; border-radius: 50px; text-decoration: none; font-weight: bold; transition: 0.3s; display: inline-block; cursor: pointer; border: none; }
+        .btn-primary { background: var(--secondary); color: white; }
         .btn-outline { border: 2px solid white; color: white; margin-left: 15px; }
+        .btn-google { background: var(--accent); color: white; margin-top: 20px; }
         .btn:hover { transform: scale(1.05); opacity: 0.9; }
 
-        footer { background: var(--dark); color: white; padding: 60px 8% 20px; text-align: center; }
-        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 40px; text-align: left; }
-        .footer-bottom { border-top: 1px solid #333; padding-top: 20px; font-size: 14px; color: #888; }
+        footer { background: var(--dark); color: white; padding: 60px 8% 20px; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-bottom: 40px; }
+        .footer-bottom { border-top: 1px solid #333; padding-top: 20px; text-align: center; font-size: 14px; color: #888; }
+        .contact-info p { margin: 10px 0; display: flex; align-items: center; gap: 10px; }
 
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.5rem; }
+            .btn-outline { margin-left: 0; margin-top: 10px; }
             nav { padding: 15px 5%; }
             .nav-links { display: none; }
         }
@@ -129,43 +138,35 @@
     <h1>शुद्ध चव, पूर्ण आरोग्य!</h1>
     <p>विमिका हेल्दी फूड्स घेऊन आले आहेत नैसर्गिक रित्या बनवलेले कुरकुरीत आणि चविष्ट स्नॅक्स.</p>
     <div>
-        <a href="#" class="btn btn-primary">ऑर्डर करा</a>
-        <a href="#" class="btn btn-outline">आमची गोष्ट</a>
+        <a href="https://wa.me/918446091358?text=मला विमिका फूड्सची उत्पादने ऑर्डर करायची आहेत." class="btn btn-primary" target="_blank">
+            <i class="fab fa-whatsapp"></i> ऑर्डर करा
+        </a>
+        <a href="#about" class="btn btn-outline">आमची गोष्ट</a>
     </div>
 </section>
 
 <div class="features">
-    <div class="feat-box">
-        <i class="fas fa-leaf"></i>
-        <h3>100% नैसर्गिक</h3>
-        <p>कोणतेही प्रिझर्व्हेटिव्ह्ज नाहीत</p>
-    </div>
-       <div class="feat-box">
-    <i class="fas fa-check-circle"></i>
-    <h3>पाम ऑईल मुक्त</h3>
-    <p>आरोग्याला घातक पाम ऑईलचा वापर नाही</p>
+    <div class="feat-box"><i class="fas fa-leaf"></i><h3>100% नैसर्गिक</h3></div>
+    <div class="feat-box"><i class="fas fa-check-circle"></i><h3>पाम ऑईल मुक्त</h3></div>
+    <div class="feat-box"><i class="fas fa-seedling"></i><h3>ग्लूटेन मुक्त</h3></div>
+    <div class="feat-box"><i class="fas fa-heart"></i><h3>आरोग्यदायी</h3></div>
 </div>
-    <div class="feat-box">
-    <i class="fas fa-seedling"></i>
-    <h3>१००% ग्लूटेन मुक्त</h3>
-    <p>पचायला हलके आणि नैसर्गिकरित्या ग्लूटेन फ्री</p>
-</div>
-    <div class="feat-box">
-        <i class="fas fa-heart"></i>
-        <h3>आरोग्यदायी</h3>
-        <p>कमी तेल आणि उच्च पोषण</p>
+
+<section id="about" class="about-section">
+    <h2 class="section-title">आमच्याबद्दल</h2>
+    <div class="about-content">
+        <p><strong>Vimika Healthy Foods</strong> मध्ये आम्ही गुणवत्तेशी कधीही तडजोड करत नाही. आमचा उद्देश ग्राहकांना असा खाऊ (Snacks) उपलब्ध करून देणे आहे जो चवीला उत्तम तर असेलच, पण आरोग्यासाठी ही तितकाच सुरक्षित असेल.</p>
+        <p>आम्ही आमची उत्पादने बनवताना पाम ऑईल, हानिकारक प्रिझर्व्हेटिव्ह्ज किंवा कृत्रिम रंगांचा वापर टाळतो. कोकण आणि महाराष्ट्रातील अस्सल चव टिकवून ठेवण्यासाठी आम्ही पारंपारिक पद्धतींचा वापर करतो.</p>
+        
+        <a href="तुमची_गूगल_फॉर्म_लिंक_येथे_पेस्ट_करा" target="_blank" class="btn btn-google">
+            <i class="fas fa-file-alt"></i> फीडबॅक / नोंदणी फॉर्म
+        </a>
     </div>
-    <div class="feat-box">
-        <i class="fas fa-truck"></i>
-        <h3>जलद डिलिव्हरी</h3>
-        <p>थेट तुमच्या दारापर्यंत</p>
-    </div>
-</div>
+</section>
 
 <section id="products">
     <h2 class="section-title">आमची उत्पादने</h2>
     <div class="container">
-        
         <div class="card">
             <span class="brand-tag">Vimika Special</span>
             <img src="https://images.unsplash.com/photo-1623055419131-680e52f30d97?w=500" alt="Banana Chips">
@@ -173,6 +174,7 @@
                 <h3>Classic Banana Chips</h3>
                 <p>केरळच्या पद्धतीने खोबरेल तेलात बनवलेले.</p>
                 <p class="price">₹99 - 200g</p>
+                <a href="https://wa.me/918446091358?text=मला Classic Banana Chips ऑर्डर करायचे आहेत." class="btn btn-primary" style="padding: 10px 20px;">ऑर्डर</a>
             </div>
         </div>
 
@@ -183,26 +185,7 @@
                 <h3>Peri-Peri Banana Chips</h3>
                 <p>तिखट आणि चटपटीत मसालेदार चव.</p>
                 <p class="price">₹110 - 200g</p>
-            </div>
-        </div>
-
-        <div class="card">
-            <span class="brand-tag">Vimika Special</span>
-            <img src="https://images.unsplash.com/photo-1566478989037-eec170784d0b?w=500" alt="Potato Chips">
-            <div class="card-body">
-                <h3>Premium Potato Chips</h3>
-                <p>कमी फॅट्स असलेले कुरकुरीत वेफर्स.</p>
-                <p class="price">₹80 - 150g</p>
-            </div>
-        </div>
-
-        <div class="card">
-            <span class="brand-tag">New Launch</span>
-            <img src="https://images.unsplash.com/photo-1512149177596-f817c7ef5d4c?w=500" alt="Chivda">
-            <div class="card-body">
-                <h3>Diet Chivda Mix</h3>
-                <p>कमी कॅलरी असलेला पौष्टिक चिवडा.</p>
-                <p class="price">₹120 - 250g</p>
+                <a href="https://wa.me/918446091358?text=मला Peri-Peri Banana Chips ऑर्डर करायचे आहेत." class="btn btn-primary" style="padding: 10px 20px;">ऑर्डर</a>
             </div>
         </div>
 
@@ -213,29 +196,30 @@
                 <h3>Jackfruit Chips</h3>
                 <p>कोकणची खास चव - फणसाचे कुरकुरीत गरे.</p>
                 <p class="price">₹150 - 200g</p>
+                <a href="https://wa.me/918446091358?text=मला Jackfruit Chips ऑर्डर करायचे आहेत." class="btn btn-primary" style="padding: 10px 20px;">ऑर्डर</a>
             </div>
         </div>
-
     </div>
 </section>
 
-<footer>
+<footer id="contact">
     <div class="footer-grid">
         <div>
             <h3>VIMIKA FOODS</h3>
-            <p>आम्ही देतो शुद्धता आणि चवीची खात्री. दर्जेदार उत्पादने हेच आमचे वैशिष्ट्य.</p>
+            <p>आम्ही देतो शुद्धता आणि चवीची खात्री. दर्जेदार उत्पादने हेच आमचे वैशिष्ट्य. घरगुती चव आणि आरोग्य यांचा संगम.</p>
         </div>
         <div>
             <h3>Quick Links</h3>
-            <p>Shop Now</p>
+            <p><a href="#home" style="color: white; text-decoration: none;">Home</a></p>
+            <p><a href="#products" style="color: white; text-decoration: none;">Shop Now</a></p>
             <p>Privacy Policy</p>
-            <p>Terms of Service</p>
         </div>
-        <div>
+        <div class="contact-info">
             <h3>संपर्क</h3>
-            <p><i class="fas fa-phone"></i> +91 84XXX XXXXX</p>
+            <p><i class="fas fa-phone"></i> +91 84460 91358</p>
             <p><i class="fas fa-envelope"></i> sales@vimikafoods.com</p>
             <p><i class="fas fa-map-marker-alt"></i> Maharashtra, India</p>
+            <p><i class="fab fa-whatsapp"></i> WhatsApp: 8446091358</p>
         </div>
     </div>
     <div class="footer-bottom">
